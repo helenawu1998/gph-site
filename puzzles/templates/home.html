@@ -46,53 +46,60 @@ h3 {
 }
 </style>
 
-<h1>FIXME Puzzle Hunt</h1>
+<h1>Avery House Virtual Olympics</h1>
 
-{% if hunt_is_over %}
+<div class="feedback">
+Welcome to Avery House Virtual Olympics! You can register and progress through
+the puzzle games until {% format_time close_time '%B %d' %}.
+<br>
+</div>
+
+<!-- {% if hunt_is_over %}
 <div class="feedback">
 {% if hunt_is_closed %}
-The FIXME Puzzle Hunt has now come to a close. Thanks for puzzling with us!
-{% else %}
-Thanks for puzzling with us! The FIXME Puzzle Hunt is now over, but you can still register and progress through the hunt until {% format_time close_time '%B %d' %}.
-{% endif %}
-<br>
-Please fill out our <a href="https://FIXME">feedback form</a>
-{% if is_wrapup_page_visible %}
+Thanks for puzzling with us!
+{% else %} -->
+<!-- {% endif %} -->
+<!-- Please fill out our <a href="https://FIXME">feedback form</a> -->
+<!-- {% if is_wrapup_page_visible %}
 and check out our <a href="{% url 'wrapup' %}">wrap-up</a>!
 {% else %}
 to let us know what you thought about the hunt.
 {% endif %}
 </div>
-{% endif %}
+{% endif %} -->
 
 <div class="row">
     <div class="four columns">
         <h3>What</h3>
         <p>
-            Lorem ipsum dolor sit amet<sup>*</sup>.
+            Avery seniors (Class of 2020) have worked hard to organize the
+            first ever Avery House Virtual Olympics! Get ready to have a blast
+            in the quest to win AVERY GLORY!
+            <!-- <sup>*</sup>. -->
         </p>
-        <p><small><sup>*</sup>consectetur adipiscing elit</small></p>
+        <!-- <p><small><sup>*</sup>consectetur adipiscing elit</small></p> -->
     </div>
     <div class="four columns">
         <h3>When</h3>
         <p>
             The hunt {% if hunt_is_over %}began{% else %}will begin{% endif %} on
             {% format_time start_time '%B %d, %Y at %I:%M %p %Z' %},
-            and {% if hunt_is_over %}ended{% else %}it will end{% endif %}
-            {% days_between start_time end_time %} days later on
+            and {% if hunt_is_over %}ended{% else %}it will end {% endif %}at
             {% format_time end_time '%B %d, %Y at %I:%M %p %Z' %}.
         </p>
     </div>
     <div class="four columns">
-        <h3>Who</h3>
+        <h3>Rules</h3>
         <p>
-            This {% if hunt_is_closed %}was{% else %}is{% endif %} a puzzlehunt run by FIXME,
-            the follow-up to the previous <a href="{% url 'archive' %}">FIXME Puzzle Hunts</a>.
-            {% if not hunt_is_closed %}
-            Registration is open! Be sure to check out the
+            <!-- This {% if hunt_is_closed %}was{% else %}is{% endif %} a puzzlehunt run by FIXME,
+            the follow-up to the previous <a href="{% url 'archive' %}">FIXME Puzzle Hunts</a>. -->
+            <!-- {% if not hunt_is_closed %} -->
+            Registration is open! Get in teams of 1-5 and get hyped for an awesome day!
+            <!-- {% endif %} -->
+            Be sure to check out the
             <a href="{% url 'rules' %}">rules</a> and <a href="{% url 'faq' %}">FAQ</a>
             for more information.
-            {% endif %}
         </p>
     </div>
 </div>
@@ -102,7 +109,7 @@ to let us know what you thought about the hunt.
     <a href="{% url 'register' %}" class="btn">Register your team!</a>
 </div>
 <h3 class="print-register">
-    <a>Register at https://FIXME/</a>
+    <a>Register at https://FIXME/login</a>
 </h3>
 {% endif %}
 

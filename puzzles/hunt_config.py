@@ -14,32 +14,32 @@ SURVEYS_AVAILABLE = True
 
 HUNT_START_TIME = timezone.make_aware(datetime.datetime(
     year=2020,
-    month=3,
-    day=13,
-    hour=18,
-    minute=28,
+    month=5,
+    day=23,
+    hour=13,
+    minute=00,
 ))
 
 HUNT_END_TIME = timezone.make_aware(datetime.datetime(
     year=2020,
-    month=3,
+    month=5,
     day=23,
-    hour=6,
-    minute=28,
+    hour=18,
+    minute=00,
 ))
 
 HUNT_CLOSE_TIME = timezone.make_aware(datetime.datetime(
     year=2020,
-    month=4,
-    day=20,
-    hour=18,
-    minute=28,
+    month=5,
+    day=30,
+    hour=13,
+    minute=00,
 ))
 
 MAX_GUESSES_PER_PUZZLE = 20
-MAX_MEMBERS_PER_TEAM = 10
-DAYS_BEFORE_HINTS = 3
-DAYS_BEFORE_FREE_ANSWERS = 6
+MAX_MEMBERS_PER_TEAM = 5
+DAYS_BEFORE_HINTS = 1
+DAYS_BEFORE_FREE_ANSWERS = 2
 
 # DEEP value used to indicate that you can see everything, e.g. the hunt is over.
 DEEP_MAX = float('inf')
