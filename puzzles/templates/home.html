@@ -75,7 +75,7 @@ to let us know what you thought about the hunt.
         <p>
             Avery seniors (Class of 2020) have worked hard to organize the
             first ever Avery House Virtual Olympics! Get ready to have a blast
-            in the quest to win AVERY GLORY!
+            solving these super fun & beginner-friendly puzzles! We wish you luck in your noble quest for AVERY GLORY!!!
             <!-- <sup>*</sup>. -->
         </p>
         <!-- <p><small><sup>*</sup>consectetur adipiscing elit</small></p> -->
@@ -83,23 +83,38 @@ to let us know what you thought about the hunt.
     <div class="four columns">
         <h3>When</h3>
         <p>
+            Virtual Ditch Day is May 23, 2020! <br> The
+            puzzle games will start at 10am PST, and end at 3pm PST!
+
+            <br><br>
+            Registration is open! Go, go, go!
+            <br>
+
+            <!--
             The hunt {% if hunt_is_over %}began{% else %}will begin{% endif %} on
             {% format_time start_time '%B %d, %Y at %I:%M %p %Z' %},
             and {% if hunt_is_over %}ended{% else %}it will end {% endif %}at
-            {% format_time end_time '%B %d, %Y at %I:%M %p %Z' %}.
+            {% format_time end_time '%B %d, %Y at %I:%M %p %Z' %}. -->
         </p>
     </div>
     <div class="four columns">
-        <h3>Rules</h3>
+        <h3>How to Play</h3>
         <p>
+            Get in teams of 1-5 and go to the "Puzzles" tab to get started!
+            Every puzzle is different, and part of the
+            fun is figuring out how to make sense of the given clues to extract
+            a final answer (an English word / phrase).
+
+            <br>
+
             <!-- This {% if hunt_is_closed %}was{% else %}is{% endif %} a puzzlehunt run by FIXME,
             the follow-up to the previous <a href="{% url 'archive' %}">FIXME Puzzle Hunts</a>. -->
             <!-- {% if not hunt_is_closed %} -->
-            Registration is open! Get in teams of 1-5 and get hyped for an awesome day!
+            <!-- Registration is open! Get in teams of 1-5 and get hyped for an awesome day! -->
             <!-- {% endif %} -->
-            Be sure to check out the
+            Check out
             <a href="{% url 'rules' %}">rules</a> and <a href="{% url 'faq' %}">FAQ</a>
-            for more information.
+            for details.
         </p>
     </div>
 </div>
@@ -109,7 +124,7 @@ to let us know what you thought about the hunt.
     <a href="{% url 'register' %}" class="btn">Register your team!</a>
 </div>
 <h3 class="print-register">
-    <a>Register at https://FIXME/login</a>
+    <a>Register at /register!</a>
 </h3>
 {% endif %}
 

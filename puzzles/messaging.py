@@ -15,13 +15,14 @@ logger = logging.getLogger('puzzles.messaging')
 
 
 def dispatch_discord_alert(webhook, content, username='GPH Django'):
-    content = '[{}] {}'.format(timezone.localtime().strftime('%H:%M:%S'), content)
-    if len(content) >= 2000:
-        content = content[:1996] + '...'
-    if settings.IS_TEST:
-        logger.info('Discord alert:\n' + content)
-        return
-    requests.post(webhook, data={'username': username, 'content': content})
+    pass
+    # content = '[{}] {}'.format(timezone.localtime().strftime('%H:%M:%S'), content)
+    # if len(content) >= 2000:
+    #     content = content[:1996] + '...'
+    # if settings.IS_TEST:
+    #     logger.info('Discord alert:\n' + content)
+    #     return
+    # requests.post(webhook, data={'username': username, 'content': content})
 
 def dispatch_general_alert(content, username='GPH AlertBot'):
     pass
@@ -64,10 +65,10 @@ def send_mail_wrapper(subject, template, context, recipients):
     mail = EmailMultiAlternatives(
         subject=subject,
         body=body,
-        from_email='FIXME',
+        from_email="hcwu@caltech.edu",
         to=recipients,
         alternatives=[(render_to_string(template + '.html', context), 'text/html')],
-        reply_to=['FIXME'])
+        reply_to=['hcwu@caltech.edu'])
     try:
         if mail.send() != 1:
             raise RuntimeError('Unknown failure???')

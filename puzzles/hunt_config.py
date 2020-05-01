@@ -10,13 +10,13 @@ ERRATA_PAGE_VISIBLE = False
 # Change this to True when the wrapup exists.
 WRAPUP_PAGE_VISIBLE = False
 # Change this to True to start showing post-solve surveys to teams.
-SURVEYS_AVAILABLE = True
+SURVEYS_AVAILABLE = False
 
 HUNT_START_TIME = timezone.make_aware(datetime.datetime(
     year=2020,
     month=5,
     day=23,
-    hour=13,
+    hour=10,
     minute=00,
 ))
 
@@ -24,7 +24,7 @@ HUNT_END_TIME = timezone.make_aware(datetime.datetime(
     year=2020,
     month=5,
     day=23,
-    hour=18,
+    hour=15,
     minute=00,
 ))
 
@@ -32,11 +32,11 @@ HUNT_CLOSE_TIME = timezone.make_aware(datetime.datetime(
     year=2020,
     month=5,
     day=30,
-    hour=13,
-    minute=00,
+    hour=23,
+    minute=59,
 ))
 
-MAX_GUESSES_PER_PUZZLE = 20
+MAX_GUESSES_PER_PUZZLE = 10
 MAX_MEMBERS_PER_TEAM = 5
 DAYS_BEFORE_HINTS = 1
 DAYS_BEFORE_FREE_ANSWERS = 2
