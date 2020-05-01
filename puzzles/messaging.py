@@ -24,16 +24,20 @@ def dispatch_discord_alert(webhook, content, username='GPH Django'):
     requests.post(webhook, data={'username': username, 'content': content})
 
 def dispatch_general_alert(content, username='GPH AlertBot'):
-    dispatch_discord_alert('FIXME', content, username)
+    pass
+    # dispatch_discord_alert('FIXME', content, username)
 
 def dispatch_submission_alert(content, username='GPH SubmissionBot'):
-    dispatch_discord_alert('FIXME', content, username)
+    pass
+    # dispatch_discord_alert('FIXME', content, username)
 
 def dispatch_free_answer_alert(content, username='GPH HelpBot'):
-    dispatch_discord_alert('FIXME', content, username)
+    pass
+    # dispatch_discord_alert('FIXME', content, username)
 
 def dispatch_victory_alert(content, username='GPH CongratBot'):
-    dispatch_discord_alert('FIXME', content, username)
+    pass
+    # dispatch_discord_alert('FIXME', content, username)
 
 
 puzzle_logger = logging.getLogger('puzzles.puzzle')
@@ -84,10 +88,10 @@ class DiscordInterface:
     def __init__(self):
         self.client = None
         self.avatars = {}
-        if not settings.IS_TEST:
-            self.client = APIClient(self.TOKEN)
-            for member in self.client.guilds_members_list(self.GUILD).values():
-                self.avatars[member.name] = member.user.avatar_url
+        # if not settings.IS_TEST:
+        #     self.client = APIClient(self.TOKEN)
+        #     for member in self.client.guilds_members_list(self.GUILD).values():
+        #         self.avatars[member.name] = member.user.avatar_url
 
     def update_hint(self, hint):
         if hint.claimed_datetime:

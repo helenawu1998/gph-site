@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/New_York'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 
@@ -123,7 +123,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'static'))
 SOLUTION_STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'puzzles/templates/solution_bodies'))
-
 
 # Email SMTP information
 
@@ -149,20 +148,17 @@ LOGGING = {
     'handlers': {
         'django': {
             'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': '/srv/gph/logs/django.log',
+            'class': 'logging.StreamHandler',
             'formatter': 'django',
         },
         'puzzle': {
             'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': '/srv/gph/logs/puzzle.log',
+            'class': 'logging.StreamHandler',
             'formatter': 'puzzles',
         },
         'request': {
             'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': '/srv/gph/logs/request.log',
+            'class': 'logging.StreamHandler',
             'formatter': 'puzzles',
         },
     },
