@@ -37,8 +37,8 @@ HUNT_CLOSE_TIME = timezone.make_aware(datetime.datetime(
 ))
 
 MAX_GUESSES_PER_PUZZLE = 10
-MAX_MEMBERS_PER_TEAM = 5
-DAYS_BEFORE_HINTS = 1
+MAX_MEMBERS_PER_TEAM = 6
+DAYS_BEFORE_HINTS = 0
 DAYS_BEFORE_FREE_ANSWERS = 2
 
 # DEEP value used to indicate that you can see everything, e.g. the hunt is over.
