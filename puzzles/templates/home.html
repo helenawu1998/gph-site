@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% load puzzle_tags %}
 
 {% block content %}
@@ -17,6 +18,13 @@
         display: none;
     }
 
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
     .print-register {
         font-weight: bold;
         margin: 20px 0 40px;
@@ -33,6 +41,13 @@
         margin-bottom: 40px;
     }
 
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
     .register .btn {
         height: 46px;
         line-height: 46px;
@@ -44,15 +59,34 @@ h3 {
     text-align: center;
     margin: 0;
 }
+h2 {
+    text-align: center;
+    margin-top: 1.5rem;
+}
 </style>
 
-<h1>Avery House Virtual Olympics</h1>
-
-<div class="feedback">
-Welcome to Avery House Virtual Olympics! You can register and progress through
-the puzzle games until {% format_time close_time '%B %d' %}.
-<br>
+<h2>
+Avery House Virtual Olympics
+</h2>
+<div class="container">
+    <h2>
+        <img src="{% static "images/avery_olympics.png" %}" alt="Avery Olympics Design" style="width:80%" class="center";/>
+    </h2>
 </div>
+<div class="feedback">
+    Welcome to the Avery House Virtual Olympics! We wish you luck in your noble quest for Avery Glory!
+    <!-- <sup>*</sup>. -->
+    <br>
+</div>
+
+{% if not hunt_is_closed %}
+<div class="register">
+    <a href="{% url 'register' %}" class="btn">Register your team! </a>
+</div>
+<!-- <h3 class="print-register">
+    <a>Register at /register!</a>
+</h3> -->
+{% endif %}
 
 <!-- {% if hunt_is_over %}
 <div class="feedback">
@@ -75,8 +109,10 @@ to let us know what you thought about the hunt.
         <p>
             Avery seniors (Class of 2020) have worked hard to organize the
             first ever Avery House Virtual Olympics! Get ready to have a blast
-            solving these super fun & beginner-friendly puzzles! We wish you luck in your noble quest for AVERY GLORY!!!
-            <!-- <sup>*</sup>. -->
+            solving these super fun & beginner-friendly puzzles!
+            <br><br>
+            Registration is open! Go, go go!
+            <br>
         </p>
         <!-- <p><small><sup>*</sup>consectetur adipiscing elit</small></p> -->
     </div>
@@ -84,12 +120,9 @@ to let us know what you thought about the hunt.
         <h3>When</h3>
         <p>
             Virtual Ditch Day is May 23, 2020! <br> The
-            puzzle games will start at 10am PST, and end at 3pm PST!
-
-            <br><br>
-            Registration is open! Go, go, go!
+            puzzle games will start at 10am PST, and end at 3pm PST. All of the
+            puzzles will be available until May 30.
             <br>
-
             <!--
             The hunt {% if hunt_is_over %}began{% else %}will begin{% endif %} on
             {% format_time start_time '%B %d, %Y at %I:%M %p %Z' %},
@@ -100,12 +133,12 @@ to let us know what you thought about the hunt.
     <div class="four columns">
         <h3>How to Play</h3>
         <p>
-            Get in teams of up to 6 people and get started at the "Puzzles" tab!
+            Get started at the "Puzzles" tab!
             Every puzzle is different, and part of the
             fun is figuring out how to make sense of the given clues to extract
-            a final answer (an English word / phrase).
+            a final answer.
 
-            <br>
+            <br><br>
 
             <!-- This {% if hunt_is_closed %}was{% else %}is{% endif %} a puzzlehunt run by FIXME,
             the follow-up to the previous <a href="{% url 'archive' %}">FIXME Puzzle Hunts</a>. -->
@@ -118,15 +151,6 @@ to let us know what you thought about the hunt.
         </p>
     </div>
 </div>
-
-{% if not hunt_is_closed %}
-<div class="register">
-    <a href="{% url 'register' %}" class="btn">Register your team! </a>
-</div>
-<h3 class="print-register">
-    <a>Register at /register!</a>
-</h3>
-{% endif %}
 
 </div>
 
