@@ -121,23 +121,25 @@
     </svg>
     <table class="sortable gph-list-table">
         <col style="width: 40%">
-        <col style="width: 10%">
-        <col style="width: 20%">
-        <col style="width: 10%">
+        <col style="width: 30%">
+        <col style="width: 5%">
+        <col style="width: 5%">
         <col style="width: 20%">
         <tr>
             <th>Puzzle</th>
             <th>Incorrect guesses</th>
-            <th>Unlock time (PST)</th>
-            <th>Time to solve</th>
+            <th></th>
+            <th></th>
             <th>Solve time (PST)</th>
         </tr>
         {% for submission in submissions %}
         <tr{% if submission.used_free_answer %} class="free"{% endif %}>
             <td sorttable_customkey="{{ submission.name }}"{% if submission.is_meta %} class="meta"{% endif %}><a href="{% url 'puzzle' submission.slug %}">{{ submission.name }}</a></td>
             <td>{{ submission.guesses }}</td>
-            <td sorttable_customkey="{{ submission.unlock_time|unix_time }}">{% format_time submission.unlock_time %}</td>
-            <td sorttable_customkey="{{ submission.open_duration }}">{% format_duration submission.open_duration %}</td>
+            <!-- <td sorttable_customkey="{{ submission.unlock_time|unix_time }}">{% format_time submission.unlock_time %}</td>
+            <td sorttable_customkey="{{ submission.open_duration }}">{% format_duration submission.open_duration %}</td> -->
+            <td sorttable_customkey="{{ submission.unlock_time|unix_time }}"></td>
+            <td sorttable_customkey="{{ submission.open_duration }}"></td>
             <td sorttable_customkey="{{ submission.solve_time|unix_time }}">{% format_time submission.solve_time %}</td>
         </tr>
         {% endfor %}
